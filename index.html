@@ -32,8 +32,8 @@
     
     <div class="col-sm-8 offset-sm-2">
      
-      <h5>Send trsnsactional message through whatsapp</h5>
-      <form action="/index.php" method="post">
+      <h5>Send transactional message through whatsapp</h5>
+      <form action="/mess.php" method="post">
     <div class="form-group">
     <label for="number">whatsapp number:</label>
     <input type="number" class="form-control" placeholder="Enter Number" id="number">
@@ -49,37 +49,9 @@
   </div>
 </div>
 
-<div class=text-center" style="margin-bottom:0 ;background-color:black color:white">
+<div class=text-center" style="margin-bottom:0 ;background-color:black color= white">
   <p>designed and developed by engineerchidiya</p>
 </div>
 
 </body>
 </html>
-
-<?php
-
-if(isset($_POST['submit'])){
-
-    $phone = '91'.$_POST['number'];
-    $message = $_POST['message'];
-    $data = [
-        'phone' => $phone, // Receivers phone
-        'body' => $message, // Message
-    ];
-    $json = json_encode($data); // Encode data to JSON
-    // URL for request POST /message
-    $token = '83763g87x';   //create account on https://chat-api.com  and paste it from there 
-    $instanceId = '777';
-    $url = 'https://api.chat-api.com/instance'.$instanceId.'/message?token='.$token;
-    // Make a POST request
-    $options = stream_context_create(['http' => [
-            'method'  => 'POST',
-            'header'  => 'Content-type: application/json',
-            'content' => $json
-        ]
-    ]);
-    // Send a request
-    $result = file_get_contents($url, false, $options);
-}
-?>
-
