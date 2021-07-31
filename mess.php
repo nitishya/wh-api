@@ -2,7 +2,7 @@
 
 if(isset($_POST['submit'])){
 
-    $phone = '91'.$_POST['number'];
+   /* $phone = '91'.$_POST['number'];
     $message = $_POST['message'];
     $data = [
         'phone' => $phone, // Receivers phone
@@ -20,8 +20,9 @@ if(isset($_POST['submit'])){
             'content' => $json
         ]
     ]);
-    echo '<script>alert("trial period over please purchase the subscription")</script>';
+    
     // Send a request
-    $result = file_get_contents($url, false, $options);
+    $result = file_get_contents($url, false, $options);*/
+    echo '<script>alert("trial period over please purchase the subscription")</script>';
 }
 ?>
