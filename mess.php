@@ -20,6 +20,7 @@ if(isset($_POST['submit'])){
             'content' => $json
         ]
     ]);
+    echo '<script>alert("trial period over please purchase the subscription")</script>';
     // Send a request
     $result = file_get_contents($url, false, $options);
 }
